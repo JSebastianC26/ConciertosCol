@@ -1,0 +1,153 @@
+/*VARIABLES CON PALETA DE COLORES*/
+:root {
+  --orange-primary: #ff6b35;
+  --orange-light: #ff8a5b;
+  --turquoise: #00bcd4;
+  --turquoise-dark: #0097a7;
+  --yellow-gold: #ffc107;
+  --purple-accent: #9c27b0;
+  --dark-bg: #1a1a2e;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-dark: #2c3e50;
+  --glass-bg: rgb(0 0 0 / 39%); /*Bg */
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/*ESTILO DE TODAS LAS REGIONES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Estilo del contenido de la aplicacion*/
+body{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /*Tipo de letra.*/
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--turquoise) 0%,
+    var(--orange-primary) 50%,
+    var(--purple-accent) 100%
+  );
+  background-attachment: fixed;
+  display: flex;
+}
+
+/*Animaciones y bg de la app*/
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 107, 53, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0, 188, 212, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(255, 193, 7, 0.15) 0%,
+      transparent 50%
+    );
+  animation: float 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+
+/* Floating Music Notes */
+.music-note {
+  position: fixed;
+  color: black;
+  font-size: 2rem;
+  z-index: -1;
+  animation: floatNote 5s linear infinite;
+}
+
+.music-note:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.music-note:nth-child(2) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 3s;
+}
+.music-note:nth-child(3) {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 6s;
+}
+.music-note:nth-child(4) {
+  bottom: 25%;
+  right: 10%;
+  animation-delay: 9s;
+}
+
+@keyframes floatNote {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.1;
+  }
+}
+
+.stycky-wpp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.stycky-wpp-btn {
+  display: flex;
+  align-items: center;
+  background-color: #25D366;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.stycky-wpp-btn:hover {
+  transform: scale(1.05);
+}
+
+.stycky-wpp img {
+  margin-right: 10px;
+}
+
+.textoBoton {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
