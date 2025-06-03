@@ -1,0 +1,47 @@
+<!-- Slider Integrado -->
+<div class="slider-container">
+    <div class="slider-wrapper">
+        <div id="customSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <% imagenes.forEach((img, index) => { %>
+                    <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                        <img src="<%= img.url %>" class="d-block w-100" alt="<%= img.alt %>">
+                        <div class="carousel-caption">
+                            <h5><i class="fas fa-guitar"></i> <%= img.titulo %></h5>
+                            <p><%= img.descripcion %></p>
+                            <button class="btn btn-lg">
+                                <i class="fas fa-ticket-alt"></i> Comprar Entradas
+                            </button>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#customSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#customSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <% imagenes.forEach((img, index) => { %>
+                    <button
+                        type="button"
+                        data-bs-target="#customSlider"
+                        data-bs-slide-to="<%= index %>"
+                        class="<%= index === 0 ? 'active' : '' %>"
+                        aria-current="<%= index === 0 ? 'true' : 'false' %>"
+                        aria-label="Slide <%= index + 1 %>">
+                    </button>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>

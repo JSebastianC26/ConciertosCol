@@ -1,11 +1,33 @@
-<%- include('partials/Cabecera.ejs', {title: titulo}); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/head/encabezados.ejs'); %>
+    <link rel="stylesheet" href="css/componentes/slider.css">
+</head>
 <body>
-    <%- include('partials/NotaFlotantes.ejs'); %>
-    <%- include('partials/mainHeader.ejs'); %>
-    <%- include('partials/navbar.ejs'); %>
-    <%- include('partials/whatsapp.ejs'); %>
-    <%- include('partials/footer.ejs'); %>
+    <%- include('partials/body/notasMusicales.ejs'); %>
+    <%- include('partials/body/header.ejs'); %>
+    <%- include('partials/body/navbar.ejs'); %>
+
+    <%- include('partials/body/slider.ejs', { imagenes: sliderData }) %>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <div class="row" id="eventos-publicos">
+                <!-- Los eventos se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+
+    
+    <%- include('partials/footer/whatsapp.ejs'); %>
+    <%- include('partials/footer/footer.ejs'); %>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
