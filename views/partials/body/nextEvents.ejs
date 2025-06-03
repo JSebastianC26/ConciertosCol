@@ -1,0 +1,40 @@
+<main>
+    <div class="container">
+        <h2 class="section-title">Próximos Eventos</h2>
+        <div class="row" id="eventos-publicos">
+            <% const disponibles=eventos.filter(e=> !e.agotado); %>
+                <% if (disponibles.length===0) { %>
+                    <div class="col-12">
+                        <div class="empty-state">
+                            <i class="fas fa-calendar-times"></i>
+                            <h3>No hay eventos disponibles</h3>
+                            <p>Próximamente tendremos eventos increíbles para ti. ¡Mantente atento!</p>
+                        </div>
+                    </div>
+                <% } else { %>
+                        <% disponibles.forEach((evento, index)=> { %>
+                            <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: '<%= (index * 0.2) %>s';">
+                                <div class="card event-card h-100" style="opacity: 1; transform: translateY(0);">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-music"></i>
+                                            <%= evento.titulo %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <i class="fas fa-calendar"></i>
+                                            <%= new Date(evento.fecha).toLocaleDateString("es-CO", { weekday: "long" ,
+                                                year: "numeric" , month: "long" , day: "numeric" }) %>
+                                        </p>
+                                        <div class="mt-auto">
+                                            <button class="btn btn-evento w-100">
+                                                <i class="fas fa-ticket-alt"></i> Comprar Boletos
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                <% } %>
+        </div>
+    </div>
+</main>

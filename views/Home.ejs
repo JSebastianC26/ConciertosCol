@@ -12,22 +12,24 @@
 
     <%- include('partials/body/slider.ejs', { imagenes: sliderData }) %>
 
-    <main>
-        <div class="container">
-            <h2 class="section-title">Próximos Eventos</h2>
-            <div class="row" id="eventos-publicos">
-                <!-- Los eventos se cargarán aquí dinámicamente -->
-            </div>
-        </div>
-    </main>
-
-
+    <%- include('partials/body/nextEvents.ejs', { eventos: eventos }) %>
     
     <%- include('partials/footer/whatsapp.ejs'); %>
     <%- include('partials/footer/footer.ejs'); %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Efecto parallax suave en scroll
+        window.addEventListener("scroll", () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector(".main-header");
+            const speed = scrolled * 0.5;
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+    </script>
     
 </body>
 </html>

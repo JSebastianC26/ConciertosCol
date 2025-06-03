@@ -1,8 +1,24 @@
-/node_modules
-package-lock.json
-package.json
+# Dependencias
+node_modules/
 
-/logs
-
+# Variables de entorno
 .env
+
+# Base de datos (opcional - depende si quieres versionar la DB)
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Logs
+logs/
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+#Pagina de prueba
 home.html
+
+docs/
