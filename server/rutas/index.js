@@ -1,7 +1,15 @@
+// import dbExpressions from '../modelos/Sentencias.js';
+// import db from '../Controladores/ejecutar.js';
+
 const express = require('express');
 const router = express.Router();
 
-// Ruta principal
+// let sql = await dbExpressions.Eventos.read({limit:3, orderBy:"id asc"});
+// const Eventos = await db.sentencias.ejecutar(sql);
+// console.log(sql, Eventos);
+// console.table(Eventos.rows);
+
+
 router.get('/', (req, res) => {
     const eventos = [
         {
@@ -52,6 +60,28 @@ router.get('/', (req, res) => {
     })
 });
 
+// Rutas admin (requieren autenticación)
+// app.use('/admin', require('./middleware/auth'), require('./middleware/admin'));
+
+router.get('/admin', (req, res) => {
+    res.render('Admin', {
+        title: 'Admin - Conciertos y Eventos COL'
+    });
+});
+
+router.get('/Login', (req, res) => {
+    res.render('Login', {
+        title: 'Login - Conciertos y Eventos COL'
+    });
+});
+
+module.exports = router;
+
+
+
+// Ruta principal
+
+
 
 // Rutas admin (requieren autenticación)
 // app.use('/admin', require('./middleware/auth'), require('./middleware/admin'));
@@ -82,4 +112,3 @@ router.get('/', (req, res) => {
 //         error: process.env.NODE_ENV === 'development' ? err : {}
 //     });
 // });
-module.exports = router;

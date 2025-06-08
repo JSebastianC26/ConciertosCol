@@ -4,6 +4,7 @@
   "description": "# Conciertos y eventos COL",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon server/rutas/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -44,9 +45,9 @@
     "minimist": "^1.2.6",
     "morgan": "^1.10.0",
     "multer": "^2.0.0",
+    "pg": "^8.16.0",
     "semver": "^7.3.8",
     "sharp": "^0.34.2",
-    "sqlite3": "^5.1.7",
     "tough-cookie": "^4.1.3",
     "trim-newlines": "^4.0.2"
   },

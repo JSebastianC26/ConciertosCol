@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="search-section">
+        <input type="text" class="search-input" placeholder="🔍 Buscar eventos..." id="searchInput">
+        <button class="btn btn-primary" onclick="openModal()">
+            ➕ Nuevo Evento
+        </button>
+        <button class="btn btn-secondary" onclick="exportData()">
+            📊 Exportar
+        </button>
+    </div>
+    
+    <div class="events-table">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Fecha Inicio</th>
+                        <th>Ciudad</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="eventsTableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Concierto Rock Nacional</td>
+                        <td>2025-07-15</td>
+                        <td>Medellín</td>
+                        <td>Música</td>
+                        <td><span class="status-badge status-active">Activo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit btn-small" onclick="editEvent(1)">✏️ Editar</button>
+                                <button class="btn btn-delete btn-small" onclick="deleteEvent(1)">🗑️ Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Conferencia Tech 2025</td>
+                        <td>2025-08-20</td>
+                        <td>Bogotá</td>
+                        <td>Tecnología</td>
+                        <td><span class="status-badge status-cancelled">Cancelado</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-edit btn-small" onclick="editEvent(2)">✏️ Editar</button>
+                                <button class="btn btn-delete btn-small" onclick="deleteEvent(2)">🗑️ Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

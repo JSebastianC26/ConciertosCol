@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/head/encabezados.ejs'); %>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <%- include('partials/body/notasMusicales.ejs'); %>
+
+    <div class="container">
+        <%- include('partials/body/headerAdmin.ejs'); %>
+        <%- include('partials/body/navbarAdmin.ejs'); %> 
+        <%- include('partials/body/contentAdmin.ejs'); %> 
+    </div>
+
+    <%- include('partials/modals/events.ejs'); %> 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
